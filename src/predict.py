@@ -51,6 +51,17 @@ def extract_features(y):
 
     return features.reshape(1, -1)
 
+# Dictionnaire de mappage des émotions en anglais vers le français
+emotion_translation = {
+    "Happy": "Heureux",
+    "Sad": "Triste",
+    "Angry": "En colère",
+    "Fearful": "Peur",
+    "Suprised": "Surpris",
+    "Neutral": "Neutre",
+    "Disgusted": "Dégoûté"
+}
+
 def predict_emotion(path):
     y = preprocess_audio(path)
     X = extract_features(y)
@@ -59,7 +70,14 @@ def predict_emotion(path):
     pred = model.predict(X_scaled)
     label = encoder.inverse_transform(pred)[0]
 
-    return label
+    print("Label prédit par le modèle (en anglais) : ", label)  # Debugging
+
+     # Traduction de l'émotion en français
+    emotion_fr = emotion_translation.get(label, label) 
+    print("Label traduit (en français) : ", emotion_fr)  # Debugging
+
+
+    return emotion_fr
 
 
 # --- Interface Tkinter ---
