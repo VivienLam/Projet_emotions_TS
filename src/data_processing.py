@@ -83,7 +83,7 @@ def preprocess_audio(raw_dir, clean_dir, duration=3.0, sr=16000, out_csv="metada
     print("Prétraitement terminé !")
 
 
-# 3. récupérer les caractéristiques numériques des signaux audios
+# 3. On récupère les caractéristiques numériques des signaux audios
 
 def extract_features(clean_dir, out_csv, sr=16000):
 

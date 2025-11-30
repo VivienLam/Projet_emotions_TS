@@ -70,12 +70,8 @@ def predict_emotion(path):
     pred = model.predict(X_scaled)
     label = encoder.inverse_transform(pred)[0]
 
-    print("Label prédit par le modèle (en anglais) : ", label)  # Debugging
-
      # Traduction de l'émotion en français
     emotion_fr = emotion_translation.get(label, label) 
-    print("Label traduit (en français) : ", emotion_fr)  # Debugging
-
 
     return emotion_fr
 

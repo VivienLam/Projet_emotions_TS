@@ -55,4 +55,3 @@ joblib.dump(svm, "models/emotion_svm_model.pkl")
 joblib.dump(encoder, "models/label_encoder.pkl")
 
 print("Modèle, scaler et encoder sauvegardés !")
-      
